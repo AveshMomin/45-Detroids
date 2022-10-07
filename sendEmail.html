@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email</title>
+  </head>
+
+  <body>
+    <h2>Ruhullah Shaikh</h2>
+
+    <form action="javascript:sendEmail()" method="post">
+      <label for="email">Enter Reciever Email</label>
+      <input type="email" name="" id="reciever" />
+      <br />
+      <label for="Subject">Enter Subject</label>
+      <input type="text" name="" id="subject" />
+      <br />
+      <label for="Detail">Enter Detail</label>
+      <textarea name="" id="detail" cols="30" rows="10"></textarea>
+      <br />
+      <!-- <button id="btn">Send</button> -->
+      <button type="submit">Send Email</button>
+    </form>
+  </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+  <script>
+    function sendEmail() {
+      var reciever = $("#reciever").val();
+      var subject = $("#subject").val();
+      var detail = $("#detail").val();
+
+
+    }
+
+    Email.send({
+      Host: "smtp.gmail.com",
+      Username: "ruhullahshaikh7@gmail.com",
+      Password: "password",
+      To: reciever,
+      From: "ruhullahshaikh7@gmail.com",
+      Subject: subject,
+      Body: detail,
+    }).then((message) => {
+      if (message == "OK") {
+        alert("Your Email has been sent successfully");
+        console.log(messagee);
+        // console.log(error);
+      } else {
+        // console.log(error);
+        console.error(message);
+        alert("Email not sent, There some error");
+      }
+    });
+  </script>
+</html>
