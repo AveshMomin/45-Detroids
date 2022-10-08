@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>SPAM Detector Website</title>
+    <title>Emai SPAM Detector</title>
 </head>
 <body>
-
+<center><h2>Email Spam Detector</h2></center>
     <div class="container-data">
     <form action="/" method="post">
          <br> <br> <br> <br> <br> <br> <br>
         <h3>Enter A Message To Check The Message is SPAM or NOT-SPAM</h3>
         <textarea class="text-box" id="sentence" name="message"  onsubmit="return checkforblank()" ></textarea>
-        <button type="submit" class="btn">CHECK</button>
+        <button type="submit" class="btn">Predict</button>
     </form>
     </div>
     <br>
     {% if message %}
     <div class="show-result">
 
-        <div class="output"><h3 style="color:black; font-size:22px; font-weight:bold; font-family:'Courier New', Courier, monospace; text-transform: uppercase;">{{message}}</h3></div>
+        <div class="output"><h3 style="color:white; font-size:22px; font-weight:bold; font-family:'Courier New', Courier, monospace; text-transform: uppercase;">{{message}}</h3></div>
         <br>
         {% if result=='This Message is Not a SPAM Message.' %}
 
