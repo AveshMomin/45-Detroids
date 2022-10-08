@@ -1,6 +1,6 @@
 import ssl
 import smtplib
-from new_password import password,Email
+from password import password,Email
 from email.message import EmailMessage
 from email.utils import formataddr
 

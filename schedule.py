@@ -14,12 +14,12 @@ PORT = 465
 SERVER ="smtp.gmail.com"
 EMAIL = Email
 PASSWORD = password
-SHEET_NAME = "Sheet Name"
-SHEET_ID ="Your id here"
+SHEET_NAME = "Sheet1"
+SHEET_ID ="Your sheet id here"
 URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/gviz/tq?tqx=out:csv&sheet={SHEET_NAME}"
 
 def load_df(url):
-    parse_dates = ["schedule_date","final_date"]
+    parse_dates = ["schedule_date"]
     df = pd.read_csv(url, parse_dates=parse_dates)
     return df
 
